@@ -1,26 +1,4 @@
 export const allCardsObjectFR = {
-    Basic: [
-        {
-            cardId: "BG_CS2_065",
-            dbfId: 96796,
-            name: "Marcheur du Vide",
-            cardSet: "Basic",
-            type: "Minion",
-            faction: "Neutral",
-            rarity: "Free",
-            cost: 1,
-            attack: 1,
-            health: 3,
-            text: "<b>Provocation</b>",
-            flavor: "Comment il fait pour marcher sans pieds, le mystère reste entier !",
-            artist: "Alex Horley Orlandelli",
-            race: "Demon",
-            playerClass: "Warlock",
-            img: "https://d15f34w2p8l1cc.cloudfront.net/hearthstone/5ae28339fb7529e737541adb80fad31e2977e53ca0fd3ac296544db72f2967fc.png",
-            locale: "frFR",
-            mechanics: [{ name: "Provocation" }],
-        },
-    ],
     Classic: [
         {
             cardId: "CS2_231",
