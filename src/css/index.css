@@ -5,11 +5,16 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     backdrop-filter: brightness(15%) blur(1px);
+    position: fixed;
+    min-width: 100vw;
+}
+main {
+    overflow-y: scroll;
 }
 
 h1 {
     max-width: fit-content;
-    padding-top: clamp(40px, 15vw, 130px);
+    padding-top: clamp(40px, 5vw, 65px);
     margin-inline: auto;
     text-align: center;
 }
