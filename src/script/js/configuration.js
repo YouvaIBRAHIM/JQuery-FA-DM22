@@ -1,7 +1,7 @@
 import { createFile } from "./createFile.js";
 import { allCardsObjectFR } from "../data/allCardsObjectFR.js";
 import setSettingEndpoint from "../request/base.js";
-import { card } from "../../components/card.js";
+import { card } from "../../components/card/card.js";
 console.log("🚀 ~ file: hello.js ~ line 5 ~ allCards", allCardsObjectFR);
 
 function cleanHero() {

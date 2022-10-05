@@ -13,29 +13,42 @@
     <body>
         <main>
             <h1>
-                <img src="./src/assets/img/title_hearthstone.png" alt="" />
+                <img src="./src/assets/img/title_hearthstone.png" alt="image de fond de hearthstone" />
             </h1>
+            <section class="section_fight section_fight_disabled" id="js_section_fight">
+                <div class="fight_container">
+                    <img src="./src/assets/img/coup-de-tonnerre.png" alt="icone du tonnerre" />
+                    <a href="configuration.html">FIGHT</a>
+                </div>
+            </section>
             <article>
                 <section class="section_player">
                     <h3>Player 1</h3>
-                    <form action="">
-                        <input type="text" id="player1" placeholder="Entre ton blaze ici" />
-                        <select name="setChoice" id="setChoice1" data-player="player1">
-                            <option value="null" aria-placeholder="Choisi ton set">Choisi ton set</option>
-                        </select>
-                    </form>
+                    <section class="section_form">
+                        <form action="">
+                            <input type="text" id="player1" data-player="player1" placeholder="Entre ton blaze ici" />
+                            <select name="setChoice" id="setChoice1" data-player="player1">
+                                <option value="null" aria-placeholder="Choisi ton set">Choisi ton set</option>
+                            </select>
+                        </form>
+                        <button class="disabled" data-player="player1">Sauvegarder</button>
+                    </section>
                     <section class="display_set" data-section="display_set" data-player="player1">
                         <div class="containers"></div>
                     </section>
                 </section>
                 <section class="section_player">
                     <h3>Player 2</h3>
-                    <form action="">
-                        <input type="text" id="player2" placeholder="Entre ton blaze ici" />
-                        <select name="setChoice" id="setChoice2" data-player="player2">
-                            <option value="null" aria-placeholder="Choisi ton set">Choisi ton set</option>
-                        </select>
-                    </form>
+                    <section class="section_form">
+                        <form action="">
+                            <input type="text" id="player2" data-player="player2" placeholder="Entre ton blaze ici" />
+                            <select name="setChoice" id="setChoice2" data-player="player2">
+                                <option value="null" aria-placeholder="Choisi ton set">Choisi ton set</option>
+                            </select>
+                        </form>
+                        <button class="disabled" data-player="player2">Sauvegarder</button>
+                    </section>
+
                     <section class="display_set" data-section="display_set" data-player="player2"></section>
                 </section>
             </article>
