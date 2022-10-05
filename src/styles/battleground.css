@@ -1,5 +1,6 @@
 html, body {
     height: 100%;
+    margin: 0;
   }
   body {
     background: #000;
@@ -26,11 +27,26 @@ html, body {
     will-change: transform;
     z-index: -1;
   }
+
+  .players{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .cardsList{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
   .card {
     left: 0;
-    top: 0;
+    top: 150px;
     perspective: 400px;
-    position: absolute;
+    position: relative;
     transform-style: preserve-3d;
     will-change: transform;
     width: 250px;
@@ -40,7 +56,13 @@ html, body {
     -webkit-user-drag: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+    /* transition: 200ms ease-in; */
   }
+
+  /* .card:hover {
+    top: 0px;
+  } */
+
   .card:active {
     cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/hearthstone-grab.png) 10 2, auto;
   }

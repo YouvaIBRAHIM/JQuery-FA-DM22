@@ -1,4 +1,5 @@
-let card,
+let cards,
+	card,
 	image,
 	cardw,
 	cardh,
@@ -34,7 +35,7 @@ let card,
 function audioload() {
 	audioloaded++;
 	if( audioloaded == 2 ) {
-		document.body.classList.add( 'loaded' );
+		$(document.body).addClass( 'loaded' );
 		majesty.play();
 		whoosh.play();
 		bindevents();
@@ -42,14 +43,33 @@ function audioload() {
 	}
 }
 
+function onHoverCard() {
+	cards.hover(
+		function(){
+			$(this).animate({
+				top: '0px'
+			}, 200)
+		},
+		function(){
+			$(this).animate({
+				top: '150px'
+			}, 200)
+		}
+	)
+
+}
 function init() {
 	onresize();
-	card = $( '.card' );
-	image = $( '.card-image' );
+	cards = $( '.card' );
+	onHoverCard();
+
+	card = $( '.card1' );
+	image = $( '.card1 .card-image' );
+	
 	cardw = image[0].clientWidth;
 	cardh = image[0].clientHeight;
-	cardx = ww / 2 - cardw / 2;
-	cardy = wh / 2 - cardh / 2;
+	cardx = 0;
+	cardy = 0;
 	ocardx = cardx;
 	ocardy = cardy;
 	pinx = 0;
@@ -87,6 +107,14 @@ function init() {
 }
 
 function bindevents() {
+	cards.on("mouseover", function (e) {
+		//stuff to do on mouseover
+		// console.log(e);
+		let className = e.target.classList[1];
+		card = $( `.${className}` );
+		console.log( `.${className}  .card-image`);
+		image = $( `.${className}  .card-image`);
+	});
 
 	card.mousedown( onmousedown );
 	$(window).mouseup( onmouseup );
@@ -97,18 +125,21 @@ function bindevents() {
 function onmousedown( e ) {
 	md = true;
 
+	card.css( 'position', `absolute`);
+	// loop()
 
 	mx = e.pageX;
 	my = e.pageY;
-	pinx = cardw / 2; // pin to center
-	piny = cardh / 2; // pin to center
-	//pinx = mx - cardx; // pin to click point
-	//piny = my - cardy; // pin to click point
+	// pinx = cardw / 2; // pin to center
+	// piny = cardh / 2; // pin to center
+	pinx = mx - cardx; // pin to click point
+	piny = my - cardy; // pin to click point
 	pinxperc = 100 - ( pinx / cardw ) * 100; // transform based on the pin position
 	pinyperc = 100 - ( piny / cardh ) * 100; // transform based on the pin position
 }
 
 function onmouseup() {
+
 	md = false;
 }
 
@@ -172,7 +203,7 @@ function loop() {
 	image.css('transform-origin', pinxperc + '% ' + pinyperc + '%');
 	image.css('transform', 'scale(' + scale + ') rotateY(' + ry + 'deg) rotateX(' + rx + 'deg)');
 
-	majestyvoltarget = md ? 0.2 : 0;
+	majestyvoltarget = md ? 0.1 : 0;
 	majestyvol += ( majestyvoltarget - majestyvol ) * 0.1;
 	majesty.volume = majestyvol;
 	
