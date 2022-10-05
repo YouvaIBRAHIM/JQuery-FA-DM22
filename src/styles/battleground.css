@@ -1,0 +1,163 @@
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  body {
+    background: #000;
+    cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/hearthstone-cursor.png) 10 2, auto;
+    overflow: hidden;
+  }
+  body:active {
+    cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/hearthstone-click.png) 10 2, auto;
+  }
+  body:after {
+    background-color: #000;
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/hearthstone-battlefield.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 0;
+    content: '';
+    filter: blur(8px);
+    left: 0;
+    opacity: 0.8;
+    position: absolute;
+    right: 0;
+    top: 0;
+    will-change: transform;
+    z-index: -1;
+  }
+
+  .players{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .cardsList{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  .card {
+    perspective: 400px;
+    transform-style: preserve-3d;
+    will-change: transform;
+    width: 250px;
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    /* transition: 200ms ease-in; */
+  }
+
+  /* .card:hover {
+    top: 0px;
+  } */
+
+  .card:active {
+    cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/hearthstone-grab.png) 10 2, auto;
+  }
+  .card-image {
+    display: block;
+    pointer-events: none;
+    transform-style: preserve-3d;
+    width: 100%;
+    will-change: transform;
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+
+   /* Slots for final card positions */
+ 
+
+ 
+/* The initial pile of unsorted cards */
+ 
+#cardPile {
+  margin: 0 auto;
+}
+ 
+#cardSlots, #cardPile {
+  width: 100%;
+  height: 150px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#cardSlots {
+  margin: 50px auto 0 auto;
+  height: 350px;
+}
+/* Individual cards and slots */
+ 
+#cardSlots div, #cardPile .card {
+  float: left;
+
+  padding-bottom: 0;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  margin: 0 0 0 10px;
+}
+ 
+#cardSlots div{
+  width: 250px;
+  height: 300px;
+}
+
+#cardPile .card{
+  width: 120px;
+  height: 150px;
+}
+.card.animate {
+  transform: scale(2);
+  /* position: absolute; */
+  z-index: 10;
+  top: -100px;
+}
+ 
+#cardPile .card:hover{
+  transform: scale(2);
+  /* position: absolute; */
+  z-index: 10;
+  top: -100px;
+}
+#cardPile .card:not(:hover){
+  top: 0;
+}
+#cardSlots div:first-child, #cardPile .card:first-child {
+  margin-left: 0;
+}
+
+#cardSlots div.hovered {
+  background: #aaa;
+}
+ 
+#cardSlots div {
+  background-color: rgba(0, 0, 0, 0.349);
+}
+ 
+#cardPile .card {
+
+  font-size: 50px;
+  text-shadow: 0 0 3px #000;
+}
+#cardPile .card .card-image{
+  width: 100%;
+}
+#cardPile .card.ui-draggable-dragging {
+  /* -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .5em rgba(0, 0, 0, .8); */
+}

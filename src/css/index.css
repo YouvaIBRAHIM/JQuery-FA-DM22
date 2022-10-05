@@ -1,0 +1,139 @@
+body {
+    background-image: url(../assets/img/bg_home.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    backdrop-filter: brightness(15%) blur(1px);
+}
+
+h1 {
+    max-width: fit-content;
+    padding-top: clamp(40px, 15vw, 130px);
+    margin-inline: auto;
+    text-align: center;
+}
+h1 img {
+    width: clamp(200px, 100%, 65vw);
+}
+/* ========= PLAYER ========= */
+h3 {
+    font-family: "LifeCraft";
+    font-size: 2.5em;
+    color: #fff;
+    text-align: center;
+    /* text-shadow: 10px 10px 0px rgba(255, 0, 0, 20%);
+    backdrop-filter: drop-shadow(2px 2px 0px rgba(255, 0, 0, 20%)); */
+}
+.section_player h3 {
+    margin-top: 8vh;
+}
+/* == Form == */
+.section_form {
+    display: flex;
+    align-items: center;
+}
+.section_form form {
+    display: flex;
+    align-items: center;
+    margin-inline: auto;
+    gap: 8px;
+}
+.section_form form > * {
+    flex: 1;
+    width: 100%;
+}
+/* == Btn == */
+button {
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    background: #14a44d;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+button.disabled {
+    background: #ccc;
+    color: rgb(53, 53, 53);
+    cursor: not-allowed;
+    transition: all 0.3s ease-in-out;
+}
+/* ========== FIGHT ======== */
+.section_fight {
+    position: absolute;
+    z-index: 10;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    background-color: rgba(0, 0, 0, 0.847);
+    transform: scale(1);
+    transition: scale 0.4s ease-in-out;
+}
+.section_fight_disabled {
+    transform: scale(0);
+    transition: scale 0.4s ease-in-out;
+}
+.fight_container {
+    position: relative;
+    width: fit-content;
+    cursor: pointer;
+}
+.fight_container img {
+    cursor: pointer;
+}
+.fight_container a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "LifeCraft";
+    font-size: 25vw;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 4px 4px 3px #000;
+}
+
+/* ========== CARD ========= */
+.display_set {
+    min-height: 180px;
+    position: relative;
+}
+.container_card::after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    /* background: linear-gradient(0deg, rgba(18, 18, 18, 0) 0%, rgba(18, 18, 18, 1) 100%); */
+    opacity: 0;
+}
+.container_card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: clamp(5px, 3vw, 15px);
+    max-height: 635px;
+    overflow: scroll;
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+.container_card .card {
+    max-width: 200px;
+}
+
+@media screen and (min-width: 900px) {
+    article {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 5vw;
+    }
+    .section_player {
+        flex: 1;
+    }
+}

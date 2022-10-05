@@ -1,0 +1,15 @@
+@font-face {
+    /* font-family: "Open Sans";
+	src: url("/fonts/OpenSans-Regular-webfont.woff2") format("woff2"), url("/fonts/OpenSans-Regular-webfont.woff")
+		format("woff"); */
+    font-family: "LifeCraft";
+    src: url("../assets/fonts/LifeCraft_Font.ttf") format("truetype");
+}
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    min-height: 100vh;
+    padding: 2vh 2vw;
+}
