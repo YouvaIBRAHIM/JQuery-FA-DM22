@@ -6,40 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/battleground.css">
     <script src="../script/jquery/jquery.js" defer></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous" defer></script>
     <script src="../script/js/battleground.js" type="module" defer></script>
     <title>Document</title>
 </head>
 <body>
 
     <div class="players">
-        <div class="firstPlayer">
-            <ul class="cardsList">
-                <li>
-                    <div class="card card1">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/hearthstone-ragnaros.png" class="card-image" draggable="false">
-                    </div>
-                </li>
-                <li>
-                    <div class="card card2">
-                        <img src="https://d15f34w2p8l1cc.cloudfront.net/hearthstone/4d816bbb1c9906a6207203ef1f9f953f1e453090ece4b3186d11a375ebd00197.png" class="card-image" draggable="false">
-                    </div>
-                </li>
-                <li>
-                    <div class="card card3">
-                        <img src="https://d15f34w2p8l1cc.cloudfront.net/hearthstone/20e808cd0ddf13212c40848edd2608cff61130f48baa088e05e3651f4a492a30.png" class="card-image" draggable="false">
-                    </div>
-                </li>
-                <li>
-                    <div class="card card4">
-                        <img src="https://d15f34w2p8l1cc.cloudfront.net/hearthstone/31b1e2d7076f51bd97cfb6b65ed3782a33f1afb30e76119ad63685905b20361e.png" class="card-image" draggable="false">
-                    </div>
-                </li>
-                <li>
-                    <div class="card card5">
-                        <img src="https://d15f34w2p8l1cc.cloudfront.net/hearthstone/bcaa1c2fb424126560500745e2a9574f6b8ce2b065d223c1f0bc9d6b30f262e7.png" class="card-image" draggable="false">
-                    </div>
-                </li>
-            </ul>
+        <div id="content">
+            <div id="cardSlots"> </div>
+            <div id="cardPile"> </div>
         </div>
     </div>
 
