@@ -73,8 +73,12 @@ button.disabled {
     display: grid;
     place-content: center;
     background-color: rgba(0, 0, 0, 0.847);
-    transform: scale(1);
-    transition: scale 0.4s ease-in-out;
+
+    /* TEST */
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
 }
 .section_fight_disabled {
     transform: scale(0);
@@ -87,6 +91,8 @@ button.disabled {
 }
 .fight_container img {
     cursor: pointer;
+    width: 0;
+    height: 0;
 }
 .fight_container a {
     position: absolute;
@@ -94,7 +100,7 @@ button.disabled {
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: "LifeCraft";
-    font-size: 25vw;
+    font-size: 0px;
     color: #fff;
     text-decoration: none;
     text-shadow: 4px 4px 3px #000;
