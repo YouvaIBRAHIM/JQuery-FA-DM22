@@ -56,9 +56,6 @@ html, body {
     /* transition: 200ms ease-in; */
   }
 
-  /* .card:hover {
-    top: 0px;
-  } */
 
   .card:active {
     cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/hearthstone-grab.png) 10 2, auto;
@@ -77,33 +74,50 @@ html, body {
     -ms-user-select: none;
   }
 
-   /* Slots for final card positions */
  
+.players{
+  display: flex;
+  flex-direction: row;
 
- 
-/* The initial pile of unsorted cards */
- 
-#cardPile {
-  margin: 0 auto;
 }
  
+.firstPlayer #content,
+.secondPlayer #content{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.secondPlayer #content{
+  flex-direction: row;
+} 
+
 #cardSlots, #cardPile {
   width: 100%;
   height: 150px;
-  padding: 20px;
+  
   display: flex;
   align-items: center;
   justify-content: center;
 }
+#cardPile {
+  height: 100vh;
+  width: 300px;
+  margin: 0 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 #cardSlots {
-  margin: 50px auto 0 auto;
+  margin:  auto;
+  width: 300px;
   height: 350px;
 }
 /* Individual cards and slots */
  
 #cardSlots div, #cardPile .card {
   float: left;
-
   padding-bottom: 0;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -117,21 +131,13 @@ html, body {
 }
 
 #cardPile .card{
-  width: 120px;
-  height: 150px;
+  width: 80px;
+  margin: 5px 0;
 }
-.card.animate {
-  transform: scale(2);
-  /* position: absolute; */
-  z-index: 10;
-  top: -100px;
-}
- 
+
 #cardPile .card:hover{
   transform: scale(2);
-  /* position: absolute; */
   z-index: 10;
-  top: -100px;
 }
 #cardPile .card:not(:hover){
   top: 0;
@@ -148,11 +154,6 @@ html, body {
   background-color: rgba(0, 0, 0, 0.349);
 }
  
-#cardPile .card {
-
-  font-size: 50px;
-  text-shadow: 0 0 3px #000;
-}
 #cardPile .card .card-image{
   width: 100%;
 }
@@ -160,4 +161,9 @@ html, body {
   /* -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
   -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
   box-shadow: 0 0 .5em rgba(0, 0, 0, .8); */
+}
+
+#cardPile .correct{
+  transform: rotate(20deg) scale(2);
+  z-index: 10;
 }
