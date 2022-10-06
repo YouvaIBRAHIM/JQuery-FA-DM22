@@ -65,9 +65,30 @@ function toggleBtnFight() {
     const { name: nameP1, setCards: setCardsP1 } = objForLocal.player1;
     const { name: nameP2, setCards: setCardsP2 } = objForLocal.player2;
     const section = $(`section#js_section_fight`);
-    section.children().hide();
-    if (!nameP1.length || !setCardsP1.length || !nameP2.length || !setCardsP2.length)
-        return section.addClass("section_fight_disabled");
-    section.removeClass("section_fight_disabled");
-    section.children().show();
+
+    if (!nameP1.length || !setCardsP1.length || !nameP2.length || !setCardsP2.length) return;
+    showPopupFighting();
+}
+
+function showPopupFighting() {
+    $(`section#js_section_fight`).animate(
+        {
+            width: "100vw",
+            height: "100vh",
+            top: "0px",
+            left: "0px",
+        },
+        {
+            duration: 600,
+            done: function () {
+                $(".fight_container>img").animate({
+                    width: "40vw",
+                    height: "45vh",
+                });
+                $(".fight_container>a").animate({
+                    fontSize: "25vw",
+                });
+            },
+        }
+    );
 }
