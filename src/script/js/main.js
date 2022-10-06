@@ -4,7 +4,7 @@ import { allCardsObjectFR } from "../data/allCardsObjectFR.js";
 const selectSet = $("select[name='setChoice']");
 const sectionDisplay = $("section[data-section='display_set']");
 const inputsName = $("input[data-player]");
-const btnsPlayer = $("button[data-player]");
+const btnSave = $("button#save");
 
 const objForLocal = {
     player1: { name: "", points: 0, setCards: [] },
@@ -35,6 +35,7 @@ selectSet.change(function () {
         section.empty().append(div).fadeIn();
     });
     toggleBtnPlayer(player);
+    toggleBtnFight();
 });
 //* Set player name
 inputsName.change(function (e) {
@@ -42,17 +43,9 @@ inputsName.change(function (e) {
     const value = this.value;
     !value ? (objForLocal[player].name = "") : (objForLocal[player].name = this.value);
     toggleBtnPlayer(player);
-});
-//* Save to localStorage
-btnsPlayer.click(function () {
-    const player = this.dataset.player;
-    const btn = $(`button[data-player="${player}"]`);
-    if (btn.hasClass("disabled")) return console.log("Faire un pop up d'interdiction");
-    const storage = JSON.parse(localStorage.getItem("hbdm22")) || {};
-    storage[player] = objForLocal[player];
-    localStorage.setItem("hbdm22", JSON.stringify(storage));
     toggleBtnFight();
 });
+//* Save to localStorage
 
 function toggleBtnPlayer(player) {
     const { name, setCards } = objForLocal[player];
@@ -64,11 +57,15 @@ function toggleBtnPlayer(player) {
 function toggleBtnFight() {
     const { name: nameP1, setCards: setCardsP1 } = objForLocal.player1;
     const { name: nameP2, setCards: setCardsP2 } = objForLocal.player2;
-    const section = $(`section#js_section_fight`);
 
-    if (!nameP1.length || !setCardsP1.length || !nameP2.length || !setCardsP2.length) return;
-    showPopupFighting();
+    if (!nameP1.length || !setCardsP1.length || !nameP2.length || !setCardsP2.length)
+        return btnSave.addClass("save_disabled");
+    btnSave.removeClass("save_disabled");
 }
+btnSave.click(() => {
+    localStorage.setItem("hbdm22", JSON.stringify(objForLocal));
+    showPopupFighting();
+});
 
 function showPopupFighting() {
     $(`section#js_section_fight`).animate(
