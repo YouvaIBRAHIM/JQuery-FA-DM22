@@ -23,15 +23,16 @@ h1 img {
 }
 /* ========= PLAYER ========= */
 h3 {
-    font-family: "LifeCraft";
-    font-size: 2.5em;
-    color: #fff;
-    text-align: center;
     /* text-shadow: 10px 10px 0px rgba(255, 0, 0, 20%);
     backdrop-filter: drop-shadow(2px 2px 0px rgba(255, 0, 0, 20%)); */
 }
 .section_player h3 {
+    font-family: "LifeCraft";
+    font-size: 2.5em;
+    color: #fecf02;
+    text-align: center;
     margin-top: 8vh;
+    text-shadow: 1px 1px 3px #14a44d;
 }
 /* == Form == */
 .section_form {
@@ -47,10 +48,21 @@ h3 {
 .section_form form > * {
     flex: 1;
     width: 100%;
+    padding: 5px 8px;
+    border-color: transparent;
+    border-radius: 8px;
+    background-color: rgb(201, 46, 46);
+    color: #fecf02;
+}
+.section_form form > *::placeholder {
+    color: #fff;
+}
+.section_form form > *:focus-visible {
+    outline-color: #fecf02;
 }
 /* == Btn == */
 button {
-    padding: 5px 10px;
+    padding: 8px 12px;
     border-radius: 8px;
     border: none;
     font-weight: 600;
@@ -60,7 +72,7 @@ button {
     transition: all 0.3s ease-in-out;
 }
 button.disabled {
-    background: #ccc;
+    background: #cccccc78;
     color: rgb(53, 53, 53);
     cursor: not-allowed;
     transition: all 0.3s ease-in-out;
