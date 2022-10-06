@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "LifeCraft";
+  src: url("../assets/fonts/LifeCraft_Font.ttf") format("truetype");
+}
+
 html, body {
     height: 100%;
     margin: 0;
@@ -53,7 +58,6 @@ html, body {
     -webkit-user-drag: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    /* transition: 200ms ease-in; */
   }
 
 
@@ -78,7 +82,7 @@ html, body {
 .players{
   display: flex;
   flex-direction: row;
-
+  justify-content: space-between;
 }
  
 .firstPlayer #content,
@@ -92,10 +96,23 @@ html, body {
   flex-direction: row;
 } 
 
+.firstPlayer .side .playername{
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  color: aliceblue;
+}
+
+.secondPlayer .side .playername{
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+  color: aliceblue;
+}
 #cardSlots, #cardPile {
   width: 100%;
   height: 150px;
-  
+  padding-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,6 +145,7 @@ html, body {
 #cardSlots div{
   width: 250px;
   height: 300px;
+  transition: 200ms ease-in;
 }
 
 #cardPile .card{
@@ -147,7 +165,7 @@ html, body {
 }
 
 #cardSlots div.hovered {
-  background: #aaa;
+  background: rgba(115, 115, 115, 0.514);
 }
  
 #cardSlots div {
@@ -157,13 +175,18 @@ html, body {
 #cardPile .card .card-image{
   width: 100%;
 }
+
 #cardPile .card.ui-draggable-dragging {
   /* -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
   -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
   box-shadow: 0 0 .5em rgba(0, 0, 0, .8); */
 }
 
-#cardPile .correct{
+.firstPlayer #cardPile .correct{
   transform: rotate(20deg) scale(2);
+  z-index: 10;
+}
+.secondPlayer #cardPile .correct{
+  transform: rotate(-15deg) scale(2);
   z-index: 10;
 }
